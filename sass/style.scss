@@ -1,13 +1,13 @@
+body {
+    font-family: Roboto;
+}
+
 .logo {
     font-family: Shrikhand;
 }
 
 * {
     box-sizing: border-box;
-}
-
-body {
-    font-family: Roboto;
 }
 
 header {
@@ -41,6 +41,7 @@ h2 {
     color: #fff;
     border: none;
     border-radius: 25px;
+    /* ombre */
 }
     
 
@@ -56,7 +57,7 @@ main {
             width: 100%;
             background-color: #EAEAEA;
             border-top: 3px solid #CFCFCF;
-            padding: 15px;
+            padding: 15px 130px 15px 110px;
         }
         #search {
             width: 100%;
@@ -67,6 +68,7 @@ main {
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
+            padding: 40px 0;
             h2 {
                 width: 60%;
             }
@@ -84,17 +86,37 @@ main {
         #functions {
             margin: 20px 0;
             .function-detail {
-                margin: 10px 0;
-                height: 70px;
+                margin: 20px 0;
+                height: 65px;
                 display: flex;
                 align-items: center;
                 background-color: #F6F6F6;
-                border-radius: 25px;
-                box-shadow: 0 5px #EDEDED;
+                border-radius: 20px;
+                box-shadow: 5px 5px 5px 0 #EDEDED;
+                font-weight: bold;
+                .badge {
+                    font-size: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                    text-align: center;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    background-color: $primary-color;
+                    margin-left: -10px;
+                }
                 i {
                     width: 25%;
                     text-align: center;
                     color: #7E7E7E;
+                }
+            } /* #F5EDFF */
+            .function-detail:hover {
+                background-color: #F5EDFF;
+                i {
+                    color: $primary-color;
                 }
             }
         }
@@ -120,11 +142,29 @@ main {
                 width: 100%;
                 height: 70%;
                 border-radius: 20px 20px 0 0;
+                display: inline-block;
+                position: relative;
+                overflow: hidden;
                 img {
                     width: 100%;
                     height: 100%;
                     border-radius: 20px 20px 0 0;
                     object-fit: cover;
+                }
+                .new {
+                    background: $tertiary-color;
+                    z-index: 1;
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto;
+                    right: 5%;
+                    top: 5%;
+                    color: #008766;
+                    width: 25%;
+                    height: 15%;
+                    font-size: 14px;
                 }
             }
             .card-body {
@@ -158,7 +198,11 @@ main {
                     .fa-solid {
                         display: initial;
                         font-size: 20px;
-                        color: $primary-color;
+                        background: linear-gradient(-170deg, $secondary-color,$primary-color);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        /* transition de couleurs au hover */
                     }
                 }
             }
@@ -177,12 +221,15 @@ footer {
         flex-direction: column;
         .item-footer {
             margin-top: 10px;
-            display: flex;
-            align-items: center;
-            i {
-                height: 15px;
-                width: 15px;
-                margin-right: 15px;
+            a {
+                color: #fff;
+                display: flex;
+                align-items: center;
+                i {
+                    height: 15px;
+                    width: 15px;
+                    margin-right: 15px;
+                }
             }
         }
     }
