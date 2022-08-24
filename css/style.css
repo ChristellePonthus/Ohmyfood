@@ -2,7 +2,7 @@ body {
   font-family: Roboto;
 }
 
-.logo {
+h1, .logo {
   font-family: Shrikhand;
 }
 
@@ -10,6 +10,48 @@ body {
   box-sizing: border-box;
 }
 
+.custom-loading-spinner {
+  cursor: progress;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-loading-spinner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  overflow: hidden;
+  background: #0b0b0b;
+  opacity: 0.6;
+}
+
+.custom-loading-spinner::after {
+  box-sizing: border-box;
+  z-index: 10002;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #99E2D0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: custom-loading 2s linear;
+}
+
+@keyframes custom-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 header {
   height: 65px;
   display: flex;
@@ -36,14 +78,22 @@ h2 {
 }
 
 .action {
-  padding: 15px;
+  padding: 0 15px;
+  height: 50px;
   background: linear-gradient(170deg, #FF79DA, #9356DC);
   color: #fff;
   border: none;
   border-radius: 25px;
-  /* ombre */
+  box-shadow: 0 5px 5px #E8E8E8;
+}
+.action:hover {
+  background: linear-gradient(-170deg, #FF79DA, #9356DC);
+  box-shadow: 0 5px 10px #FF79DA;
 }
 
+main {
+  background: #F6F6F6;
+}
 main #explorer {
   display: flex;
   flex-direction: column;
@@ -75,8 +125,73 @@ main #explorer #search h2 {
 main #explorer #search p {
   width: 80%;
 }
+main #explorer #search .action {
+  width: 220px;
+}
 main #explorer #search .action p {
   width: 100%;
+}
+main .img-menu {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+main .img-menu img {
+  height: 260px;
+  width: 100%;
+}
+main .img-menu .title-menu {
+  background: #F6F6F6;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  bottom: -10%;
+  color: #000;
+  width: 100%;
+  height: 80px;
+  border-radius: 30px 35px 0 0;
+}
+main .img-menu .title-menu h1 {
+  font-size: 25px;
+}
+main .img-menu .title-menu i {
+  font-size: 25px;
+}
+main .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+main .menu .categories {
+  width: 90%;
+  margin: 20px;
+}
+main .menu .categories h2 {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+main .menu .categories .line {
+  height: 10px;
+  width: 35px;
+  border-bottom: 3px solid #99E2D0;
+}
+main .menu .categories .dishes {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #fff;
+  box-shadow: 0 5px 5px #E8E8E8;
+}
+main .menu .action {
+  margin: 30px 0;
+  width: 190px;
 }
 main #functioning {
   margin: 50px 20px;
@@ -209,19 +324,19 @@ footer {
   color: #fff;
   padding: 25px;
 }
-footer #menu-footer {
+footer .menu-footer {
   display: flex;
   flex-direction: column;
 }
-footer #menu-footer .item-footer {
+footer .menu-footer .item-footer {
   margin-top: 10px;
 }
-footer #menu-footer .item-footer a {
+footer .menu-footer .item-footer a {
   color: #fff;
   display: flex;
   align-items: center;
 }
-footer #menu-footer .item-footer a i {
+footer .menu-footer .item-footer a i {
   height: 15px;
   width: 15px;
   margin-right: 15px;
