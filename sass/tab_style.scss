@@ -1,0 +1,21 @@
+@media screen and (min-width: 768px) {
+
+    main {
+        .img-menu {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    
+        .commande {
+            .action {
+                margin: 30px 0;
+                width: 80%;
+            }
+        }
+    }
+}

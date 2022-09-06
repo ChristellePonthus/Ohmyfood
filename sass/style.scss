@@ -85,6 +85,31 @@ h2 {
         box-shadow: 0 5px 10px $secondary-color;
     }
 }
+.favorite-icone {
+    background: none;
+    border: none;
+    .fa-regular {
+        display: initial;
+        font-size: 20px;
+    }
+    .fa-solid {
+        display: none;
+    }
+}
+.favorite-icone:hover {
+    .fa-regular {
+        display: none;
+    }
+    .fa-solid {
+        display: initial;
+        font-size: 20px;
+        background: linear-gradient(-170deg, $secondary-color,$primary-color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        /* transition de couleurs au hover */
+    }
+}
     
 
 main {
@@ -131,6 +156,7 @@ main {
         display: inline-block;
         position: relative;
         overflow: hidden;
+        width: 100%;
         img {
             height: 260px;
             width: 100%;
@@ -176,13 +202,58 @@ main {
             }
             .dishes {
                 margin-top: 15px;
-                padding: 15px;
+                height: 70px;
                 border-radius: 15px;
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
+                align-items: center;
                 background-color: #fff;
                 box-shadow: 0 5px 5px #E8E8E8;
+                animation: dishes 1000ms ease-in;
+                .container {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    .dish-desc {
+                        padding: 15px;
+                    }
+                    .dish-price {
+                        padding: 15px 20px;
+                    }
+                }
+                
+                .choice {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0 15px 15px 0;
+                    width: 0;
+                    height: 70px;
+                    background-color: $tertiary-color;
+                    transition: all 1s ease;
+                    overflow: hidden;
+                    .fa-check {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #fff;
+                        color: $tertiary-color;
+                        border-radius: 30px;
+                        min-height: 30px;
+                        min-width: 30px;
+                        font-weight: bold;
+                    }
+                }
+                &:hover {
+                    .choice {
+                        width: 100px;
+                        animation: choice 1000ms;
+                        transition: all 1s ease;
+                        .fa-check {
+                            animation: check 1000ms;
+                        }
+                    }
+                }
             }
         }
         .action {
@@ -289,31 +360,6 @@ main {
                     flex-direction: column;
                     justify-content: space-between;
                     align-self: stretch;
-                }
-                .favorite-icone {
-                    background: none;
-                    border: none;
-                    .fa-regular {
-                        display: initial;
-                        font-size: 20px;
-                    }
-                    .fa-solid {
-                        display: none;
-                    }
-                }
-                .favorite-icone:hover {
-                    .fa-regular {
-                        display: none;
-                    }
-                    .fa-solid {
-                        display: initial;
-                        font-size: 20px;
-                        background: linear-gradient(-170deg, $secondary-color,$primary-color);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        color: transparent;
-                        /* transition de couleurs au hover */
-                    }
                 }
             }
         }
