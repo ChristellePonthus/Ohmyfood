@@ -1,6 +1,7 @@
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
+$box-shadow: #E8E8E8;
 
 body {
     font-family: Roboto;
@@ -14,47 +15,53 @@ h1, .logo {
     box-sizing: border-box;
 }
 
-.custom-loading-spinner {
-    cursor: progress;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.content-spinner {
+    $animation-duration: 2s;
+    $animation-count: 2;
+    background-color: #ffffff;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    height: 100vh;
+    inset: 0; /* top: 0; bottom: 0; left: 0; right: 0;*/
+    z-index: 2;
+    opacity: 0.9;
+    animation: spinner-disappear 1s $animation-duration * $animation-count forwards;
+    .spin2 {
+        display: grid;
+        place-items: center;
+        position: fixed;
+        height: 100px;
+        width: 100px;
+        // border-right: 6px solid transparent;
+        border-top: 6px solid $tertiary-color;
+        border-bottom: 6px solid transparent;
+        border-radius: 50px;
+        animation: spinner 2s infinite;
+        .bubble {
+            &::after {
+                content: '';
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-color: $primary-color;
+                border-radius: 50px;
+                border: 5px solid $secondary-color;
+                animation: bubble 3s ease-in-out infinite;
+            }
+        }
+    }
 }
-.custom-loading-spinner::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 10001;
-    overflow: hidden;
-    background: #0b0b0b;
-    opacity: 0.6;
-}
-.custom-loading-spinner::after {
-    box-sizing: border-box;
-    z-index: 10002;
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -25px 0 0 -25px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid $tertiary-color;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: custom-loading 2s linear;
-}
-@keyframes custom-loading {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+
 
 header {
     height: 65px;
     display: flex;
     justify-content: center;
     align-items: center;
+    i {
+        text-align: left;
+    }
     img {
         height: 25px;
     }
@@ -79,10 +86,10 @@ h2 {
     color: #fff;
     border: none;
     border-radius: 25px;
-    box-shadow: 0 5px 5px #E8E8E8;
+    box-shadow: 0 5px 5px $box-shadow;
     &:hover {
-        background: linear-gradient(-170deg, $secondary-color,$primary-color);
-        box-shadow: 0 5px 10px $secondary-color;
+        background: linear-gradient(170deg, $secondary-color,$primary-color);
+        box-shadow: 0 5px 5px $secondary-color;
     }
 }
 .favorite-icone {
@@ -102,7 +109,7 @@ h2 {
     }
     .fa-solid {
         display: initial;
-        font-size: 20px;
+        font-size: 25px;
         background: linear-gradient(-170deg, $secondary-color,$primary-color);
         background-clip: text;
         -webkit-background-clip: text;
@@ -183,78 +190,98 @@ main {
         }
     }
 
-    .menu {
+    .commande {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
-        padding-top: 20px;
-        .categories {
-            width: 90%;
-            margin: 20px;
-            h2 {
-                font-size: 15px;
-                text-transform: uppercase;
-            }
-            .line {
-                height: 10px;
-                width: 35px;
-                border-bottom: 3px solid $tertiary-color;
-            }
-            .dishes {
-                margin-top: 15px;
-                height: 70px;
-                border-radius: 15px;
-                display: flex;
-                align-items: center;
-                background-color: #fff;
-                box-shadow: 0 5px 5px #E8E8E8;
-                animation: dishes 1000ms ease-in;
-                .container {
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-end;
-                    .dish-desc {
-                        padding: 15px;
-                    }
-                    .dish-price {
-                        padding: 15px 20px;
-                    }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            width: 100%;
+            .categories {
+                width: 90%;
+                margin: 20px;
+                h2 {
+                    font-size: 15px;
+                    text-transform: uppercase;
                 }
-                
-                .choice {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 0 15px 15px 0;
-                    width: 0;
+                .line {
+                    height: 10px;
+                    width: 35px;
+                    border-bottom: 3px solid $tertiary-color;
+                }
+                .dishes {
+                    margin-top: 15px;
                     height: 70px;
-                    background-color: $tertiary-color;
-                    transition: all 1s ease;
-                    overflow: hidden;
-                    .fa-check {
+                    width: 100%;
+                    border-radius: 15px;
+                    display: flex;
+                    align-items: center;
+                    background-color: #fff;
+                    box-shadow: 0 5px 5px $box-shadow;
+                    animation: dishes 1000ms ease-in;
+                    .container {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        .dish-desc {
+                            padding: 15px;
+                            padding-right: 0;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            h3, p {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+                        .dish-price {
+                            padding: 15px 20px;
+                        }
+                    }
+                    
+                    .choice {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        background-color: #fff;
-                        color: $tertiary-color;
-                        border-radius: 30px;
-                        min-height: 30px;
-                        min-width: 30px;
-                        font-weight: bold;
-                    }
-                }
-                &:hover {
-                    .choice {
-                        width: 100px;
-                        animation: choice 1000ms;
+                        border-radius: 0 15px 15px 0;
+                        width: 0;
+                        height: 70px;
+                        background-color: $tertiary-color;
                         transition: all 1s ease;
+                        overflow: hidden;
                         .fa-check {
-                            animation: check 1000ms;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: #fff;
+                            color: $tertiary-color;
+                            border-radius: 30px;
+                            min-height: 30px;
+                            min-width: 30px;
+                            font-weight: bold;
+                        }
+                    }
+                    &:hover {
+                        .choice {
+                            width: 100px;
+                            animation: choice 1000ms;
+                            transition: all 1s ease;
+                            .fa-check {
+                                animation: check 1000ms;
+                            }
                         }
                     }
                 }
-            }
+            }       
         }
         .action {
             margin: 30px 0;

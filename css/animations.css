@@ -1,3 +1,40 @@
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0.5);
+        border: 3px solid #9356DC;
+    }
+    65% {
+        transform: scale(0.4);
+        background-color: white;
+        border-width: 0;
+    }
+    90% {
+        background-color: #FF79DA;
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        border-width: 3px;
+        background-color: #9356DC;
+        opacity: 0;
+    }
+}
+
+@keyframes spinner-disappear {
+    to {
+        transform: scale(0);
+    }
+}
+
 @keyframes choice {
     0% {
         display: none;
@@ -26,5 +63,18 @@
     100% {
         margin-top: 15px;
         opacity: 1;
+    }
+}
+
+@keyframes dish-desc {
+    0% {
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: initial;
+    }
+    100% {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
