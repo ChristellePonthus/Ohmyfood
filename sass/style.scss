@@ -100,10 +100,10 @@ h2 {
     color: #fff;
     border: none;
     border-radius: 25px;
-    box-shadow: 0 5px 5px $box-shadow;
+    box-shadow: 0 5px 5px #D5D5D5;
     &:hover {
-        background: linear-gradient(170deg, lighten($secondary-color,10%),lighten($primary-color,10%));
-        box-shadow: 0 5px 5px darken($box-shadow, 10%);
+        background: linear-gradient(170deg, lighten($secondary-color,5%),lighten($primary-color,10%));
+        box-shadow: 0 5px 5px darken(#D5D5D5, 10%);
     }
 }
 

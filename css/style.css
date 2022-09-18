@@ -89,11 +89,11 @@ h2 {
   color: #fff;
   border: none;
   border-radius: 25px;
-  box-shadow: 0 5px 5px #E8E8E8;
+  box-shadow: 0 5px 5px #D5D5D5;
 }
 .action:hover {
-  background: linear-gradient(170deg, #fface8, #ae80e5);
-  box-shadow: 0 5px 5px #cfcfcf;
+  background: linear-gradient(170deg, #ff93e1, #ae80e5);
+  box-shadow: 0 5px 5px #bcbcbc;
 }
 
 .favorite-icone {
