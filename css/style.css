@@ -45,15 +45,26 @@ h1, .logo {
 
 header {
   height: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+header .logo {
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  top: 35%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
 header i {
-  text-align: left;
-}
-header img {
-  height: 25px;
+  z-index: 1;
+  position: absolute;
+  margin: 0 auto;
+  left: 5%;
+  color: #000000;
+  height: 15%;
+  font-size: 20px;
 }
 
 a {
@@ -81,8 +92,8 @@ h2 {
   box-shadow: 0 5px 5px #E8E8E8;
 }
 .action:hover {
-  background: linear-gradient(170deg, #FF79DA, #9356DC);
-  box-shadow: 0 5px 5px #FF79DA;
+  background: linear-gradient(170deg, #fface8, #ae80e5);
+  box-shadow: 0 5px 5px #cfcfcf;
 }
 
 .favorite-icone {
@@ -91,7 +102,7 @@ h2 {
 }
 .favorite-icone .fa-regular {
   display: initial;
-  font-size: 20px;
+  font-size: 23px;
 }
 .favorite-icone .fa-solid {
   display: none;
@@ -107,7 +118,6 @@ h2 {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  /* transition de couleurs au hover */
 }
 
 main {
@@ -120,28 +130,39 @@ main #explorer {
 }
 main #explorer #position {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
   background-color: #EAEAEA;
   border-top: 3px solid #CFCFCF;
-  padding: 15px 130px 15px 110px;
+  padding: 15px 0;
+}
+main #explorer #position .fa-location-dot {
+  margin-right: 20px;
 }
 main #explorer #search {
   width: 100%;
-  height: 280px;
+  height: 300px;
   text-align: center;
   background-color: #F6F6F6;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 40px 0;
+  padding: 30px 0;
 }
-main #explorer #search h2 {
+main #explorer #search #search-desc {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+main #explorer #search #search-desc h2 {
   width: 60%;
 }
-main #explorer #search p {
+main #explorer #search #search-desc p {
   width: 80%;
 }
 main #explorer #search .action {
@@ -276,18 +297,25 @@ main .commande .action {
   width: 190px;
 }
 main #functioning {
-  margin: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  background-color: #ffffff;
 }
 main #functioning #functions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 20px 0;
   /* #F5EDFF */
 }
 main #functioning #functions .function-detail {
+  background: #F6F6F6;
   margin: 20px 0;
   height: 65px;
+  width: 100%;
   display: flex;
   align-items: center;
-  background-color: #F6F6F6;
   border-radius: 20px;
   box-shadow: 5px 5px 5px 0 #EDEDED;
   font-weight: bold;

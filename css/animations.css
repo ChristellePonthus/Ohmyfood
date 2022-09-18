@@ -65,6 +65,18 @@
         opacity: 1;
     }
 }
+@media screen and (min-width: 992px) {
+    @keyframes dishes {
+        0% {
+            margin-top: 45px;
+            opacity: 0;
+        }
+        100% {
+            margin-top: 30px;
+            opacity: 1;
+        }
+    }
+}
 
 @keyframes dish-desc {
     0% {

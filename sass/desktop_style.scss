@@ -1,4 +1,4 @@
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1025px) {
     header {
         height: 65px;
         display: flex;
@@ -10,26 +10,60 @@
     }
     
     h2 {
-        font-size: 25px;
+        font-size: 20px;
         margin: 0;
     }
     p, h3 {
-        font-size: 20px;
+        font-size: 15px;
         margin: 0;
     }
     
 
     main {
+
+        #explorer {
+            #search {
+                justify-content: space-evenly;
+                #search-desc {
+                    width: auto;
+                }
+            }
+        }
+
+        #functioning {
+            #functions {
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0 25px;
+                .function-detail {
+                    width: 370px;
+                }
+            }
+        }
+
+        #restaurants {
+            #rest-list {
+                justify-content: space-between;
+                .card {
+                    width: 400px;
+                    margin: 25px;
+                }
+            }
+        }
         
         .img-menu {
             display: flex;
             overflow: hidden;
-            height: 300px;
+            height: 450px;
             width: 100%;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+            .title-menu {
+                bottom: -5%;
+                padding: 40px;
             }
             h1 {
                 font-size: 35px;
@@ -37,13 +71,23 @@
         }
     
         .commande {
+            margin: 0;
             display: flex;
-            flex-wrap: wrap;
             flex-direction: column;
             align-items: center;
             .menu {
+                width: 100%;
+                display: flex;
                 flex-direction: row;
-                
+                flex-wrap: wrap;
+                justify-content: space-around;
+                .categories {
+                    width: auto;
+                    .dishes {
+                        margin-top: 30px;
+                        width: 430px;
+                    }
+                }
             }
             .action {
                 margin: 30px 0;

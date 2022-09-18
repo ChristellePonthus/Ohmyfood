@@ -2,6 +2,7 @@ $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $box-shadow: #E8E8E8;
+$grey-background : #F6F6F6;
 
 body {
     font-family: Roboto;
@@ -33,7 +34,6 @@ h1, .logo {
         position: fixed;
         height: 100px;
         width: 100px;
-        // border-right: 6px solid transparent;
         border-top: 6px solid $tertiary-color;
         border-bottom: 6px solid transparent;
         border-radius: 50px;
@@ -53,32 +53,46 @@ h1, .logo {
     }
 }
 
-
 header {
     height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    text-align: center;
+    .logo {
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+        top: 35%;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+    }
     i {
-        text-align: left;
+        z-index: 1;
+        position: absolute;
+        margin: 0 auto;
+        left: 5%;
+        color: #000000;
+        height: 15%;
+        font-size: 20px;
     }
-    img {
-        height: 25px;
-    }
+    
 }
 
 a {
     text-decoration: none;
     color: #000;
 }
+
 p, h3 {
     font-size: 15px;
     margin: 0;
 }
+
 h2 {
     font-size: 20px;
     margin: 0;
 }
+
 .action {
     padding: 0 15px;
     height: 50px;
@@ -88,21 +102,23 @@ h2 {
     border-radius: 25px;
     box-shadow: 0 5px 5px $box-shadow;
     &:hover {
-        background: linear-gradient(170deg, $secondary-color,$primary-color);
-        box-shadow: 0 5px 5px $secondary-color;
+        background: linear-gradient(170deg, lighten($secondary-color,10%),lighten($primary-color,10%));
+        box-shadow: 0 5px 5px darken($box-shadow, 10%);
     }
 }
+
 .favorite-icone {
     background: none;
     border: none;
     .fa-regular {
         display: initial;
-        font-size: 20px;
+        font-size: 23px;
     }
     .fa-solid {
         display: none;
     }
 }
+
 .favorite-icone:hover {
     .fa-regular {
         display: none;
@@ -114,41 +130,50 @@ h2 {
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        /* transition de couleurs au hover */
     }
 }
     
-
 main {
-    background: #F6F6F6;
+    background: $grey-background;
     #explorer {
         display: flex;
         flex-direction: column;
         align-items: center;
         #position {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             width: 100%;
             background-color: #EAEAEA;
             border-top: 3px solid #CFCFCF;
-            padding: 15px 130px 15px 110px;
+            padding: 15px 0;
+            .fa-location-dot {
+                margin-right: 20px;
+            }
         }
         #search {
             width: 100%;
-            height: 280px;
+            height: 300px;
             text-align: center;
-            background-color: #F6F6F6;
+            background-color: $grey-background;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
-            padding: 40px 0;
-            h2 {
-                width: 60%;
-            }
-            p {
-                width: 80%;
+            padding: 30px 0;
+            #search-desc {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                h2 {
+                    width: 60%;
+                }
+                p {
+                    width: 80%;
+                }
             }
             .action {
                 width: 220px;
@@ -169,7 +194,7 @@ main {
             width: 100%;
         }
         .title-menu {
-            background: #F6F6F6;
+            background: $grey-background;
             z-index: 1;
             position: absolute;
             display: flex;
@@ -290,15 +315,22 @@ main {
     }
 
     #functioning {
-        margin: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 50px 20px;
+        background-color: #ffffff;
         #functions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 20px 0;
             .function-detail {
+                background: $grey-background;
                 margin: 20px 0;
                 height: 65px;
+                width: 100%;
                 display: flex;
                 align-items: center;
-                background-color: #F6F6F6;
                 border-radius: 20px;
                 box-shadow: 5px 5px 5px 0 #EDEDED;
                 font-weight: bold;
@@ -334,7 +366,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: #F6F6F6;
+        background-color: $grey-background;
         padding: 55px 20px;
         .card {
             width: 100%;
@@ -416,5 +448,4 @@ footer {
             }
         }
     }
-    
 }

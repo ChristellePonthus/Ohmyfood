@@ -1,4 +1,4 @@
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1025px) {
   header {
     height: 65px;
     display: flex;
@@ -9,17 +9,38 @@
     height: 40px;
   }
   h2 {
-    font-size: 25px;
+    font-size: 20px;
     margin: 0;
   }
   p, h3 {
-    font-size: 20px;
+    font-size: 15px;
     margin: 0;
+  }
+  main #explorer #search {
+    justify-content: space-evenly;
+  }
+  main #explorer #search #search-desc {
+    width: auto;
+  }
+  main #functioning #functions {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 25px;
+  }
+  main #functioning #functions .function-detail {
+    width: 370px;
+  }
+  main #restaurants #rest-list {
+    justify-content: space-between;
+  }
+  main #restaurants #rest-list .card {
+    width: 400px;
+    margin: 25px;
   }
   main .img-menu {
     display: flex;
     overflow: hidden;
-    height: 300px;
+    height: 450px;
     width: 100%;
   }
   main .img-menu img {
@@ -27,17 +48,32 @@
     height: 100%;
     object-fit: cover;
   }
+  main .img-menu .title-menu {
+    bottom: -5%;
+    padding: 40px;
+  }
   main .img-menu h1 {
     font-size: 35px;
   }
   main .commande {
+    margin: 0;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
   }
   main .commande .menu {
+    width: 100%;
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  main .commande .menu .categories {
+    width: auto;
+  }
+  main .commande .menu .categories .dishes {
+    margin-top: 30px;
+    width: 430px;
   }
   main .commande .action {
     margin: 30px 0;
