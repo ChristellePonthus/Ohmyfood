@@ -31,7 +31,7 @@
     width: 370px;
   }
   main #restaurants #rest-list {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   main #restaurants #rest-list .card {
     width: 400px;

@@ -119,7 +119,7 @@ h2 {
     }
 }
 
-.favorite-icone:hover {
+.favorite-icone:hover, .favorite-icone:focus {
     .fa-regular {
         display: none;
     }

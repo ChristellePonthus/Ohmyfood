@@ -108,10 +108,10 @@ h2 {
   display: none;
 }
 
-.favorite-icone:hover .fa-regular {
+.favorite-icone:hover .fa-regular, .favorite-icone:focus .fa-regular {
   display: none;
 }
-.favorite-icone:hover .fa-solid {
+.favorite-icone:hover .fa-solid, .favorite-icone:focus .fa-solid {
   display: initial;
   font-size: 25px;
   background: linear-gradient(-170deg, #FF79DA, #9356DC);
